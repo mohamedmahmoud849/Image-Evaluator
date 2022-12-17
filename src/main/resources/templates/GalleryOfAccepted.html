@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<div class="col-12">
+    <h3 class="text-center">list of Images</h3>
+    <hr>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+
+
+            <th scope="col" class="text-center">Image</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${products}" >
+
+            <th scope="row" class="text-center"><a th:href="*{'Gallery/'+product.id}"> <img alt="" th:src="*{'data:image/jpeg;base64,'+{product.image}}" style="width: 100px;height: 100px;"></a></th>
+
+        </tr>
+
+        </tbody>
+    </table>
+
+    <hr>
+</div>
+
+<div class="text-center"><a href="/login" ><button >Navigate to login</button></a>
+<a href="/register" ><button >Navigate to registration</button></a></div>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

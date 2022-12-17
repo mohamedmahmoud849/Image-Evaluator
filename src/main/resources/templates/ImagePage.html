@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Image</title>
+
+
+</head>
+<body>
+
+<span th:object="${imageRequest}"></span>
+
+<img alt="" th:src="*{'data:image/jpeg;base64,'+{imageRequest.image}}" style="width: 500px;height: 500px; " >
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!-- Default form subscription -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Upload Page</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<div class="card">
+	<div class="card-header">
+		<p class="h4 mb-2 text-center">Add Product</p>
+	</div>
+	<div class="card-body">
+		<form  action="/Upload" method="post" enctype="multipart/form-data" th:object="${UploadRequest}">
+
+
+			<select class="custom-file mb-4" name="category" id="category" th:width="1000px">
+				<option value="living_thing">Living Thing</option>
+				<option value="machine">Machine</option>
+				<option value="nature">nature</option>
+
+			</select>
+
+
+			<!-- Description -->
+			<textarea class="form-control mb-4" id="desc" name="description"
+				placeholder="Product Description">Product Description
+                                 </textarea>
+			<div class="custom-file mb-4">
+				<input type="file" name="file" class="custom-file-input"
+					id="customFile"> <label class="custom-file-label"
+					for="customFile">Product Image</label>
+			</div>
+			<!-- Sign in button -->
+			<button class="btn btn-info btn-block" type="submit" value="saveImage">add</button>
+		</form>
+	</div>
+</div>
+
+</body>
+</html>
+<!-- Default form subscription -->

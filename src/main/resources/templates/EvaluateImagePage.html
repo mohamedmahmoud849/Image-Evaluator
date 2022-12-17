@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Evaluate</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+<span th:object="${EvaluateRequest}"></span>
+
+<img class="text-center" alt="" th:src="*{'data:image/jpeg;base64,'+{EvaluateRequest.image}}" style="width: 500px;height: 500px; " >
+<br>
+<div class="text-center">
+<a th:href="*{'Admin/'+EvaluateRequest.id+'?status=false'}"><button>Reject</button></a>
+<a th:href="*{'Admin/'+EvaluateRequest.id+'?status=true'}"><button>Accept</button></a>
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
